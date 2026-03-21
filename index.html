@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Moje CV - Arsen Medvid</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			background-color: #f4f4f4;
+			padding: 20px;
+		}
+
+		/* Główny kontener */
+		body {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		/* Header */
+		header {
+			background: linear-gradient(135deg, #1E3C4B 0%, #181821 100%);
+			color: white;
+			padding: 40px 30px;
+			border-radius: 10px 10px 0 0;
+			text-align: center;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		header h1 {
+			font-size: 2.5em;
+			margin-bottom: 15px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+		}
+
+		header img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			border: 4px solid white;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+			object-fit: cover;
+			background-color: #ddd;
+		}
+
+		/* Main */
+		main {
+			background: white;
+			padding: 30px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			border-radius: 0 0 10px 10px;
+		}
+
+		/* Sekcje */
+		section {
+			margin-bottom: 30px;
+			padding-bottom: 20px;
+			border-bottom: 2px solid #eee;
+		}
+
+		section:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		section h2 {
+			color: #1E3C4B;
+			font-size: 1.8em;
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			border-bottom: 3px solid #1E3C4B;
+			display: inline-block;
+		}
+
+		/* Kontakt */
+		section:first-of-type p {
+			margin-bottom: 10px
+		}
+
+		section:first-of-type a {
+			color: #667eea;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		section:first-of-type a:hover {
+			color: #764ba2;
+			text-decoration: underline;
+		}
+
+		/* Linki zewnętrzne (GitHub, LinkedIn) */
+		section:first-of-type p:last-of-type {
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px dashed #ddd;
+		}
+
+		section:first-of-type p:last-of-type a {
+			display: inline-block;
+			padding: 8px 20px;
+			margin-right: 10px;
+			background: linear-gradient(135deg, #1E3C4B 0%, #764ba2 100%);
+			color: white;
+			border-radius: 25px;
+			font-weight: bolt;
+			transition: transform 0.3s, box-shadow 0.3;
+		}
+
+		section:first-of-type p:last-of-type a:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+			text-decoration: none;
+		}
+
+		/* O mnie */
+		section:nth-of-type(2) p {
+			font-size: 1em;
+			line-height: 1.8;
+			padding: 20px;
+			font-weight: bold;
+			border-radius: 10px;
+			border-left: 4px solid #181821;
+			color: #666;
+		}
+
+		/* Umiejętności */
+		section:nth-of-type(3) ul {
+			list-style: none;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+			gap: 10px;
+		}
+
+		section:nth-of-type(3) li {
+			background: linear-gradient(135deg, #1E3C4B 0%, #181821 100%);
+			color: white;
+			padding: 10px 15px;
+			border-radius: 25px;
+			text-align: center;
+			font-weight: bold;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s;
+		}
+
+		section:nth-of-type(3) li:hover {
+			transform: scale(1.05);
+		}
+
+		/* Doświadczenie */
+		article {
+			background: #f9f9f9;
+			padding: 20px;
+			border-radius: 10px;
+			margin-bottom: 15px;
+			border-left: 4px solid #181821;
+			transition: transform 0.3s, box-shadow 0.3s;
+		}
+
+		article h3 {
+			color: #333;
+			font-size: 1.3em;
+			margin-bottom: 10px;
+			text-transform: capitalize;
+		}
+
+		article p:first-of-type {
+			color: #1E3C4B;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		article p:last-of-type {
+			color: #666;
+			font-weight: bold;
+		}
+
+		/* Edukacja */
+		section:nth-of-type(5) p {
+			background: #f0f0f0;
+			padding: 15px;
+			border-radius: 10px;
+			font-weight: bold;
+			border-left: 4px solid #181821;
+			color: #666;
+		}
+
+		/* Projekty */
+		section:nth-of-type(6) ul {
+			list-style: none;
+		}
+
+		section:nth-of-type(6) li {
+			background: #f9f9f9;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 10px;
+			font-weight: bold;
+			color: #666;
+			border-left: 4px solid #181821;
+			transition: transform 0.3s;
+		}
+
+		section:nth-of-type(6) li:before {
+			content: "⚜ ";
+			margin-right: 5px;
+			font-weight: bold;
+			color: #181821;
+		}
+
+		/* Footer */
+		footer {
+			text-align: center;
+			margin-top: 20px;
+			padding: 20px;
+			background: linear-gradient(135deg, #1E3C4B 0%, #181821 100%);
+			color: white;
+			border-radius: 10px;
+
+		}
+
+		footer p {
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Arsen Medvid - 77604</h1>
+		<img src="zdjecie.png" alt="Moje Zdjęcie profilowe">
+	</header>
+
+	<main>
+		<section>
+			<h2>Kontakt</h2>
+			<p>Email: <a href="mailto:amedvid2@stu.vistula.edu.pl">amedvid2@stu.vistula.edu.pl</a></p>
+			<p>Telefon: <a href="tel:+48503905204">+48503905204</a></p>
+			<p>Miasto: Warszawa, Polska</p>
+
+			<p>
+				<a href="https://github.com/PL77604" target="_blank" rel="noopener noreferrer">GitHub</a>
+				<a href=" https://www.linkedin.com/in/arsen-medvid-6414993b8/" target="_blank"
+					rel="noopener noreferrer">LinkedIn</a>
+			</p>
+		</section>
+
+		<section>
+			<h2>O mnie</h2>
+			<p>Jestem studentem drugiego semestru Informatyki na Uniwersytecie Vistula. Chcę w przyszłości odnieść
+				sukces i zająć się tworzeniem stron internetowych oraz programowaniem w języku Java.</p>
+		</section>
+
+		<section>
+			<h2>Umiejętności</h2>
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>Java</li>
+				<li>C#</li>
+				<li>Python</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Doświadczenie</h2>
+			<article>
+				<h3>administrator techniczny serwera Minecraft z modami</h3>
+				<p>2024-2025</p>
+				<p>Naprawianie problemów z serwerem, przepisywanie niektórych wtyczek, przepisywanie modyfikacji</p>
+			</article>
+
+			<article>
+				<h3>osoba wypełniająca podstawowy formularz GitHub</h3>
+				<p>2025-obecnie</p>
+				<p>Przygotowuję się do rozmów kwalifikacyjnych poprzez rozwijanie projektów na GitHub</p>
+			</article>
+		</section>
+
+		<section>
+			<h2>Edukacja</h2>
+			<p>Akademia Finansów i Biznesu Vistula, Informatyka, drugi semestr studiów</p>
+		</section>
+
+		<section>
+			<h2>Projekty</h2>
+			<ul>
+				<li>Capes Maker - program do konwersji obrazów PNG na peleryny do gry Minecraft, specjalnie dla
+					zmodyfikowanych serwerów</li>
+				<li>Texture Maker - program do konwersji obrazów PNG na tekstury do zapisywania modyfikacji do gier w
+					różnych formatach</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>© 2026 Arsen Medvid - 77604</p>
+
+	</footer>
+</body>
+
+</html>
